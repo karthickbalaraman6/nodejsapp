@@ -12,16 +12,16 @@ git 'https://github.com/karthickbalaraman6/nodejsapp.git'
 
 stage('Build Docker Image') {
 steps {
-sh 'docker build -t nodejs-app .'
+sh 'docker build -t nodejsapp .'
 }
 }
 
 
 stage('Run Container') {
 steps {
-sh 'docker stop nodejs-app || true'
-sh 'docker rm nodejs-app || true'
-sh 'docker run -d -p 3000:3000 --name nodejs-app nodejs-app'
+sh 'docker stop nodejsapp || true'
+sh 'docker rm nodejsapp || true'
+sh 'docker run -d -p 3000:3000 --name nodejsapp nodejsapp'
 }
 }
 }
